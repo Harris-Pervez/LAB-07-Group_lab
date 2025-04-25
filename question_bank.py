@@ -9,14 +9,34 @@ import random
 questions = {
     "Science": [
         ("What is the chemical symbol for water?", "H2O"),
+        ("What is the chemical symbol for mehtane?", "NH4"),
+        ("What is the chemical symbol for sodium chloride?", "NaCl")
         # Add more questions as tuples (question, answer)
-    ],
+    ],"Math":[
+        ("What is the sqare of 2","4"),
+        ("What is the sqare of 3","9"),
+        ("What is the sqare of 4","16")
+              ],
+    "English":[
+        ("Which fov is used in present Tense","1st"),
+        ("Which fov is used in Past Tense","2nd"),
+        ("Which fov is used in Future Tense","1st")
+        ]
 }
 
 hints = {
-    "Science": [
+    "Science": [ questions["Science"][0][1],
+                questions["Science"][1][1],
+                questions["Science"][2][1]
         # Pair each question with a corresponding hint.
     ],
+    "Math":[questions["Math"][0][1],
+            questions["Math"][1][1],
+            questions["Math"][2][1]
+            ],
+    "English":[questions["English"][0][1],
+               questions["English"][1][1],
+               questions["English"][2][1]]
     # Repeat for other categories as needed.
 }
 
@@ -34,8 +54,22 @@ def select_random_question(category):
     """
     #------------------------
     # Add your code here
-    #------------------------
+    #-----------------------
+    # -
+    if category in questions:
+        L=len(questions[category])
+        ran_no=random.randint(0,L-1)
+        que=questions[category][ran_no][0]
+        ans=questions[category][ran_no][1]
+        return (que,ans) 
     raise NotImplementedError("This function is not implemented yet.")
+
+
+
+
+
+
+
     #------------------------
 
 #---------------------------------------
@@ -53,8 +87,8 @@ def check_answer(player_answer, correct_answer):
     """
     #------------------------
     # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    #-----------------------
+    return player_answer==correct_answer
     #------------------------
 
 #---------------------------------------
@@ -69,11 +103,19 @@ def remove_question(category, question):
 
     Returns:
     - None
-    """
-    #------------------------
-    # Add your code here
-    #------------------------
-    raise NotImplementedError("This function is not implemented yet.")
+    # """
+    # #------------------------
+    # # Add your code here
+    # #------------------------
+    # if category in questions:
+        
+        
+        
+        
+        
+        
+        
+    # raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
 #---------------------------------------
@@ -91,6 +133,7 @@ def display_question_and_accept_answer(question):
     #------------------------
     # Add your code here
     #------------------------
+    
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
 
@@ -127,6 +170,12 @@ def display_correct_answer(correct_answer):
     """
     #------------------------
     # Add your code here
+    
+    
+    
+    
+    
+    
     #------------------------
     raise NotImplementedError("This function is not implemented yet.")
     #------------------------
